@@ -3,6 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C2DF2A82-DC7A-4CFB-9CD4-BDAF0624F842}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Services.Identity", "src\Actio.Services.Identity\Actio.Services.Identity.csproj", "{8AC9B116-7B39-424D-B14F-4B12098B1DC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actio.Api", "src\Actio.Api\Actio.Api.csproj", "{265C7044-E6EC-4150-8856-2B172A05C0D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Action.Common", "src\Action.Common\Action.Common.csproj", "{27F14EC2-06E1-47C9-957F-EA7C473223BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,5 +22,48 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Debug|x64.Build.0 = Debug|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Debug|x86.Build.0 = Debug|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Release|x64.ActiveCfg = Release|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Release|x64.Build.0 = Release|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Release|x86.ActiveCfg = Release|Any CPU
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6}.Release|x86.Build.0 = Release|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Debug|x64.Build.0 = Debug|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Debug|x86.Build.0 = Debug|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Release|x64.ActiveCfg = Release|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Release|x64.Build.0 = Release|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Release|x86.ActiveCfg = Release|Any CPU
+		{265C7044-E6EC-4150-8856-2B172A05C0D0}.Release|x86.Build.0 = Release|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Debug|x64.Build.0 = Debug|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Debug|x86.Build.0 = Debug|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Release|x64.ActiveCfg = Release|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Release|x64.Build.0 = Release|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Release|x86.ActiveCfg = Release|Any CPU
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8AC9B116-7B39-424D-B14F-4B12098B1DC6} = {C2DF2A82-DC7A-4CFB-9CD4-BDAF0624F842}
+		{265C7044-E6EC-4150-8856-2B172A05C0D0} = {C2DF2A82-DC7A-4CFB-9CD4-BDAF0624F842}
+		{27F14EC2-06E1-47C9-957F-EA7C473223BD} = {C2DF2A82-DC7A-4CFB-9CD4-BDAF0624F842}
 	EndGlobalSection
 EndGlobal
