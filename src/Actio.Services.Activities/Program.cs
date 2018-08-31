@@ -18,7 +18,7 @@ namespace Actio.Services.Activities
         {
             // CreateWebHostBuilder(args).Build().Run();
             ServiceHost.Create<Startup>(args)
-            .UserRabbitMq()            
+            .UserRabbitMq()
             .SubscribeToCommand<CreateActivity>()
             .Build()
             .Run();

@@ -6,17 +6,21 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RawRabbit;
 using RawRabbit.Instantiation;
+using RawRabbit.Pipe;
 
 namespace Action.Common.RabbitMq
 {
     public static class Extensions
     {
-        public static Task WithCommandHandlerAsync<TCommand>(this IBusClient bus, ICommandHandler<TCommand> handler) where TCommand : ICommand
-                    => bus.SubscribeAsync<TCommand>(msg
-                                    => handler.HandleAsync(msg),
-                                                    ctx => ctx.UseSubscribeConfiguration(cfg
-                                                                    => cfg.FromDeclaredQueue(q
-                                                                            => q.WithName(GetQueueName<TCommand>()))));
+        public static Task WithCommandHandlerAsync<TCommand>(this IBusClient bus, 
+        ICommandHandler<TCommand> handler) where TCommand : ICommand
+                    => bus.SubscribeAsync<TCommand>(async msg =>
+                    {
+                        await handler.HandleAsync(msg);
+                    },
+                    ctx => ctx.UseSubscribeConfiguration(cfg
+                                                                            => cfg.FromDeclaredQueue(q
+                                                                                    => q.WithName(GetQueueName<TCommand>()))));
 
         public static Task WithEventHandlerAsync<TEvent>(this IBusClient bus, IEventHandler<TEvent> handler) where TEvent : IEvent
                             => bus.SubscribeAsync<TEvent>(msg
