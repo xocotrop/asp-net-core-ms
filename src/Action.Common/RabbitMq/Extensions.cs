@@ -29,7 +29,8 @@ namespace Action.Common.RabbitMq
                                                                             => cfg.FromDeclaredQueue(q
                                                                                     => q.WithName(GetQueueName<TEvent>()))));
 
-        private static string GetQueueName<T>() => $"{Assembly.GetEntryAssembly().GetName()}/{typeof(T).Name}";
+        private static string GetQueueName<T>() 
+        => $"{Assembly.GetEntryAssembly().GetName()}/{typeof(T).Name}";
 
         public static void AddRabbitMq(this IServiceCollection services, IConfiguration configuration)
         {

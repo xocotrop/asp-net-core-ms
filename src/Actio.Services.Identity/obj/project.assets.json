@@ -12787,23 +12787,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Igor\\.nuget\\packages\\": {},
+    "C:\\Users\\igor.santos\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Actio.Services.Identity\\Actio.Services.Identity.csproj",
+      "projectUniqueName": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Actio.Services.Identity\\Actio.Services.Identity.csproj",
       "projectName": "Actio.Services.Identity",
-      "projectPath": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Actio.Services.Identity\\Actio.Services.Identity.csproj",
-      "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Actio.Services.Identity\\obj\\",
+      "projectPath": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Actio.Services.Identity\\Actio.Services.Identity.csproj",
+      "packagesPath": "C:\\Users\\igor.santos\\.nuget\\packages\\",
+      "outputPath": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Actio.Services.Identity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\igor.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12816,8 +12816,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj": {
-              "projectPath": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj"
+            "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj": {
+              "projectPath": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj"
             }
           }
         }

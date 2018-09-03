@@ -19,7 +19,7 @@ namespace Actio.Services.Identity
             // CreateWebHostBuilder(args).Build().Run();
             ServiceHost.Create<Startup>(args)
             .UserRabbitMq()
-            .SubscribeToCommand<CreateActivity>()
+            .SubscribeToCommand<CreateUser>()
             .Build()
             .Run();
         }
