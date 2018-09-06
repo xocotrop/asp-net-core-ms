@@ -24,14 +24,16 @@ namespace Action.Common.Auth
             {
                 ValidateAudience = false,
                 ValidIssuer = _options.Issuer,
-                IssuerSigningKey = _issuerSigninKey
+                IssuerSigningKey = _issuerSigninKey,
+                ClockSkew = TimeSpan.Zero
             };
         }
         public JsonWebToken Create(Guid userId)
         {
-            var nowUtc = DateTime.UtcNow;
-            var expires = nowUtc.AddMinutes(_options.ExpiryMinutes);
+            var nowUtc = DateTime.Now;
+            var expires = nowUtc.AddMinutes(_options.ExpiryMinutes); // descobrir porque não ta rolando com minuto
             var centuryBegin = new DateTime(1970, 1, 1).ToUniversalTime();
+            var centuryBegin2 = new DateTime(1970, 1, 1);
             // var centuryBegin = DateTime.MinValue.ToUniversalTime();
             var exp = (long)(new TimeSpan(expires.Ticks - centuryBegin.Ticks).TotalSeconds);
             var now = (long)(new TimeSpan(nowUtc.Ticks - centuryBegin.Ticks).TotalSeconds);
@@ -42,6 +44,10 @@ namespace Action.Common.Auth
                 {"exp", exp},
                 {"unique_name", userId}
             };
+            Console.WriteLine(nowUtc);
+            Console.WriteLine(expires);
+            Console.WriteLine(centuryBegin);
+            Console.WriteLine(centuryBegin2);
             var jwt = new JwtSecurityToken(_jwtHeader, payload);
             var token = _jJwtSecurityTokenHandler.WriteToken(jwt);
 

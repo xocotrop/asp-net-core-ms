@@ -27,7 +27,7 @@ namespace Actio.Api.Controllers
         }
 
         [HttpGet("")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize("Bearer")]
         public IActionResult Get() => Content("Secured");
     }
 }
