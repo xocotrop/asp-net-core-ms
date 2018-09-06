@@ -18,6 +18,7 @@ using Actio.Services.Identity.Repositories;
 using Actio.Services.Identity.Domain.Repositories;
 using Action.Common.Mongo;
 using Actio.Services.Identity.Services;
+using Action.Common.Auth;
 
 namespace Actio.Services.Identity
 {
@@ -35,6 +36,7 @@ namespace Actio.Services.Identity
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddLogging();
+            services.AddJwt(Configuration);
             services.AddMongoDB(Configuration);
             services.AddRabbitMq(Configuration);
             services.AddScoped<ICommandHandler<CreateUser>, CreateUserHandler>();
