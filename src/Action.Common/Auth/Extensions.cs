@@ -23,17 +23,32 @@ namespace Action.Common.Auth
             })
             .AddJwtBearer(cfg =>
             {
-                Console.WriteLine(DateTime.Now);
-                Console.WriteLine(DateTime.UtcNow);
-                cfg.RequireHttpsMetadata = false;
-                cfg.SaveToken = true;
-                cfg.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateAudience = false,
-                    ValidIssuer = options.Issuer,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SecretKey)),
-                    ClockSkew = TimeSpan.Zero
-                };
+                var paramsValidation = cfg.TokenValidationParameters;
+                paramsValidation.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SecretKey));
+                paramsValidation.ValidAudience = options.Audience;
+                paramsValidation.ValidIssuer = options.Issuer;
+
+                // Valida a assinatura de um token recebido
+                paramsValidation.ValidateIssuerSigningKey = true;
+
+                // Verifica se um token recebido ainda é válido
+                paramsValidation.ValidateLifetime = true;
+
+                // Tempo de tolerância para a expiração de um token (utilizado
+                // caso haja problemas de sincronismo de horário entre diferentes
+                // computadores envolvidos no processo de comunicação)
+                paramsValidation.ClockSkew = TimeSpan.Zero;
+                // Console.WriteLine(DateTime.Now);
+                // Console.WriteLine(DateTime.UtcNow);
+                // cfg.RequireHttpsMetadata = false;
+                // cfg.SaveToken = true;
+                // cfg.TokenValidationParameters = new TokenValidationParameters
+                // {
+                //     ValidateAudience = false,
+                //     ValidIssuer = options.Issuer,
+                //     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SecretKey)),
+                //     ClockSkew = TimeSpan.Zero
+                // };
 
             });
             services.AddAuthorization(auth =>

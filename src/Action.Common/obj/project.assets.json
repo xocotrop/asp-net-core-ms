@@ -8420,23 +8420,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\igor.santos\\.nuget\\packages\\": {},
+    "C:\\Users\\Igor\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj",
+      "projectUniqueName": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj",
       "projectName": "Action.Common",
-      "projectPath": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj",
-      "packagesPath": "C:\\Users\\igor.santos\\.nuget\\packages\\",
-      "outputPath": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Action.Common\\obj\\",
+      "projectPath": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj",
+      "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Action.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\igor.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

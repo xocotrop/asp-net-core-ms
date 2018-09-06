@@ -12799,23 +12799,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\igor.santos\\.nuget\\packages\\": {},
+    "C:\\Users\\Igor\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Actio.Api\\Actio.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Actio.Api\\Actio.Api.csproj",
       "projectName": "Actio.Api",
-      "projectPath": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Actio.Api\\Actio.Api.csproj",
-      "packagesPath": "C:\\Users\\igor.santos\\.nuget\\packages\\",
-      "outputPath": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Actio.Api\\obj\\",
+      "projectPath": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Actio.Api\\Actio.Api.csproj",
+      "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Actio.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\igor.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12828,8 +12828,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj": {
-              "projectPath": "E:\\backup igor\\igor\\cursos\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj"
+            "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj": {
+              "projectPath": "C:\\Users\\Igor\\Documents\\igor\\git\\asp-net-core-ms\\src\\Action.Common\\Action.Common.csproj"
             }
           }
         }

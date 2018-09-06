@@ -1,5 +1,7 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -22,6 +24,7 @@ namespace Action.Common.Auth
             _jwtHeader = new JwtHeader(_signingCredentials);
             _tokenValidationParameters = new TokenValidationParameters
             {
+                ValidateIssuerSigningKey = true,
                 ValidateAudience = false,
                 ValidIssuer = _options.Issuer,
                 IssuerSigningKey = _issuerSigninKey,
@@ -32,29 +35,45 @@ namespace Action.Common.Auth
         {
             var nowUtc = DateTime.Now;
             var expires = nowUtc.AddMinutes(_options.ExpiryMinutes); // descobrir porque não ta rolando com minuto
-            var centuryBegin = new DateTime(1970, 1, 1).ToUniversalTime();
-            var centuryBegin2 = new DateTime(1970, 1, 1);
+            // var centuryBegin = new DateTime(1970, 1, 1).ToUniversalTime();
+            // var centuryBegin2 = new DateTime(1970, 1, 1);
             // var centuryBegin = DateTime.MinValue.ToUniversalTime();
-            var exp = (long)(new TimeSpan(expires.Ticks - centuryBegin.Ticks).TotalSeconds);
-            var now = (long)(new TimeSpan(nowUtc.Ticks - centuryBegin.Ticks).TotalSeconds);
-            var payload = new JwtPayload{
-                {"sub", userId},
-                {"iss", _options.Issuer},
-                {"iat", now},
-                {"exp", exp},
-                {"unique_name", userId}
-            };
-            Console.WriteLine(nowUtc);
-            Console.WriteLine(expires);
-            Console.WriteLine(centuryBegin);
-            Console.WriteLine(centuryBegin2);
-            var jwt = new JwtSecurityToken(_jwtHeader, payload);
-            var token = _jJwtSecurityTokenHandler.WriteToken(jwt);
+            // var exp = (long)(new TimeSpan(expires.Ticks - centuryBegin.Ticks).TotalSeconds);
+            // var now = (long)(new TimeSpan(nowUtc.Ticks - centuryBegin.Ticks).TotalSeconds);
+            // var payload = new JwtPayload{
+            //     {"sub", userId},
+            //     {"iss", _options.Issuer},
+            //     {"iat", now},
+            //     {"exp", exp},
+            //     {"unique_name", userId}
+            // };
+            // Console.WriteLine(nowUtc);
+            // Console.WriteLine(expires);
+            // Console.WriteLine(centuryBegin);
+            // Console.WriteLine(centuryBegin2);
+            // var jwt = new JwtSecurityToken(_jwtHeader, payload);
+            ClaimsIdentity identity = new ClaimsIdentity(
+                    new GenericIdentity(userId.ToString(), "Login"),
+                    new[] {
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
+                        new Claim(JwtRegisteredClaimNames.UniqueName, userId.ToString())
+                    }
+                );
+            var sToken = _jJwtSecurityTokenHandler.CreateToken(new SecurityTokenDescriptor
+            {
+                Issuer = _options.Issuer,
+                Audience = _options.Audience,
+                SigningCredentials = _signingCredentials,
+                Subject = identity,
+                NotBefore = nowUtc,
+                Expires = expires
+            });
+            var token = _jJwtSecurityTokenHandler.WriteToken(sToken);
 
             return new JsonWebToken
             {
                 Token = token,
-                Expires = exp
+                Expires = (long)new TimeSpan(expires.Ticks).TotalSeconds
             };
         }
     }
