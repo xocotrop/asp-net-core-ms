@@ -23,7 +23,6 @@ namespace Actio.Services.Activities.Handlers
         }
         public async Task HandleAsync(CreateActivity command)
         {
-            Console.WriteLine($"Creating Activity: {@command.Name}");
             _logger.LogInformation($"Creating Activity: {@command.Name}");
             try
             {
