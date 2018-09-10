@@ -30,5 +30,15 @@ namespace Actio.Services.Identity.Domain.Services
 
             return Convert.ToBase64String(saltBytes);
         }
+
+        public string GetSalt()
+        {
+            var random = new Random();
+            var saltBytes = new byte[SaltSize];
+            var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(saltBytes);
+
+            return Convert.ToBase64String(saltBytes);
+        }
     }
 }

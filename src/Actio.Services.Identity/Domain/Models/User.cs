@@ -44,7 +44,8 @@ namespace Actio.Services.Identity.Domain.Models
                 throw new ActioException("empty_password", $"password can not be empty");
             }
 
-            Salt = encrypter.GetSalt(password);
+            // Salt = encrypter.GetSalt(password);
+            Salt = encrypter.GetSalt();
             Password = encrypter.GetHash(password, Salt);
         }
 
