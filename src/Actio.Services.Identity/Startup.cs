@@ -19,6 +19,8 @@ using Actio.Services.Identity.Domain.Repositories;
 using Action.Common.Mongo;
 using Actio.Services.Identity.Services;
 using Action.Common.Auth;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace Actio.Services.Identity
 {
@@ -48,6 +50,13 @@ namespace Actio.Services.Identity
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            var supportedCultures = new[] { new CultureInfo("pt-BR") };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(culture: "pt-BR", uiCulture: "pt-BR"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
